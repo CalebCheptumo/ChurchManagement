@@ -8,9 +8,9 @@ from .views import (
 )
 
 urlpatterns = [
-    path('pastors/', PastorListView.as_view(), name='pastor_list'),
-    path('pastors/<int:pk>/', PastorDetailView.as_view(), name='pastor_detail'),
-    path('pastors/new/', PastorCreateView.as_view(), name='pastor_create'),
-    path('pastors/<int:pk>/edit/', PastorUpdateView.as_view(), name='pastor_update'),
-    path('pastors/<int:pk>/delete/', PastorDeleteView.as_view(), name='pastor_delete'),
+    path('', PastorListView.as_view(), name='pastor_list'),
+    path('<int:pk>/', PastorDetailView.as_view(), name='pastor_detail'),
+    path('new/', PastorCreateView.as_view(), name='pastor_create'),
+    path('<int:pk>/edit/', PastorUpdateView.as_view(), name='pastor_update'),
+    path('<int:pk>/delete/', PastorDeleteView.as_view(), name='pastor_delete'),
 ]
