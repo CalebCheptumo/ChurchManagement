@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Pastors</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pastor in object_list %}
+        <tr>
+          <td><a href="{% url 'pastor_detail' pastor.id %}">{{ pastor.first_name }} {{ pastor.last_name }}</a></td>
+          <td>{{ pastor.contact_number }}</td>
+          <td>
+            <a href="{% url 'pastor_update' pastor.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'pastor_delete' pastor.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No pastors found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'pastor_create' %}" class="btn btn-success">Add Pastor</a>
+{% endblock %}

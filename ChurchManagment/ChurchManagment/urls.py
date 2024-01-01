@@ -21,6 +21,6 @@ from auth_app.views import login_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_view, name='login'),
-    path('pastors/', include('pastor.urls')),
+    path('pastors/', include('Pastor.urls')),
 
 ]
