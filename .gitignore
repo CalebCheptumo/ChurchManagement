@@ -1,0 +1,32 @@
+# .gitignore
+
+# Ignore Django migration files to keep the schema generic
+*/migrations/*
+
+# Ignore all bytecode compiled files
+*.pyc
+__pycache__/
+
+# Ignore all log files
+*.log
+
+# Ignore SQLite database file if using SQLite
+*.sqlite3
+
+# Ignore all the media files
+media/
+
+# Ignore all the static files
+static/
+
+# If you're using a virtual environment, ignore this
+venv/
+*.venv
+env/
+*.env
+
+# Ignore all the local settings file
+local_settings.py
+
+# Ignore Jupyter Notebook files if using
+*.ipynb_checkpoints
